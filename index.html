@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>1.Arrow Function</p>
+    <P>2.Global and Local Scope</P>
+    <p>3.Closures</p>
+    <p>4.Pure Functions</p>
+    <p>5.Call Stack</p>
+</body>
+<script>
+    //Arrow Function
+    const multiplyByTwo = (num) => {
+        return num * 2;
+    }
+    console.log("===Arrow function for multiplybyTwo===")
+    console.log(`NUMBER:${multiplyByTwo(2)}`)
+    console.log(`NUMBER:${multiplyByTwo(8)}`)
+    console.log(`NUMBER:${multiplyByTwo(5)}`)
+
+    const isEven = (number) => {
+        if (number % 2 == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+     console.log("===Arrow function for even or not===")
+    console.log(`Given number is:${isEven(4)}`)
+    console.log(`Given number is:${isEven(5)}`)
+    console.log(`Given number is:${isEven(9)}`)
+
+    //Global and Local Variables
+    let globalvar = 10;
+    function scopeTest() {
+        let localvar = 20;
+        console.log("===Global and local===")
+        console.log(globalvar)
+        console.log(localvar)
+    }
+    scopeTest();
+    console.log(globalvar)
+    //console.log(localvar)
+    console.log('while using local var it showing error because local var we cannot use in outside of the block code.')
+
+    //Closures
+    function outerFunction() {
+        let outerVar = 5;
+        function innerFunction() {
+            return outerVar;
+        }
+        return innerFunction()
+    }
+    let Closure = outerFunction()
+    console.log("===Closure Function===")
+    console.log(Closure)
+
+    //Pure Function
+    //pure function with addition
+    function sum(a, b) {
+        return a + b;
+    }
+    const sum1 = sum(2, 3);
+    const sum2 = sum(2, 3);
+    console.log("===Purefunction for adding numbers===")
+    console.log('sum1:', sum1, 'sum2:', sum2)
+    //pure function with product
+    function multiply(x, y) {
+        return x * y;
+    }
+    const product1 = sum(5, 3);
+    const product2 = sum(5, 3);
+    console.log("===Purefunction for product of numbers===")
+    console.log('product1:', product1, 'product2:', product2)
+
+    //call stack
+    function functionA() {
+        functionB()
+    }
+    function functionB() {
+        functionC()
+    }
+    function functionC() {
+        console.log("===Call stack===")
+        console.log("In functionC")
+    }
+    functionA()
+
+
+</script>
+
+</html>
